@@ -1,4 +1,4 @@
-<?php 
+<?php // nope
 session_start();
 if (isset($_SESSION['role']) && isset($_SESSION['id'])) {
 
@@ -15,41 +15,43 @@ if (isset($_POST['user_name']) && isset($_POST['password']) && isset($_POST['ful
 	$user_name = validate_input($_POST['user_name']);
 	$password = validate_input($_POST['password']);
 	$full_name = validate_input($_POST['full_name']);
+	$id = validate_input($_POST['id']);
+
 
 	if (empty($user_name)) {
 		$em = "User name is required";
-	    header("Location: ../add-user.php?error=$em");
+	    header("Location: ../edit-user.php?error=$em&id=$id");
 	    exit();
 	}else if (empty($password)) {
 		$em = "Password is required";
-	    header("Location: ../add-user.php?error=$em");
+	    header("Location: ../edit-user.php?error=$em&id=$id");
 	    exit();
 	}else if (empty($full_name)) {
 		$em = "Full name is required";
-	    header("Location: ../add-user.php?error=$em");
+	    header("Location: ../edit-user.php?error=$em&id=$id");
 	    exit();
 	}else {
     
        include "Model/User.php";
        $password = password_hash($password, PASSWORD_DEFAULT);
 
-       $data = array($full_name, $user_name, $password, "student");
-       insert_user($conn, $data);
+       $data = array($full_name, $user_name, $password, "student", $id, "student");
+       update_user($conn, $data);
 
        $em = "User created successfully";
-	    header("Location: ../add-user.php?success=$em");
+	    header("Location: ../edit-user.php?success=$em&id=$id");
 	    exit();
 
     
 	}
 }else {
    $em = "Unknown error occurred";
-   header("Location: ../add-user.php?error=$em");
+   header("Location: ../edit-user.php?error=$em");
    exit();
 }
 
 }else{ 
    $em = "First login";
-   header("Location: ../add-user.php?error=$em");
+   header("Location: ../edit-user.php?error=$em");
    exit();
 }
