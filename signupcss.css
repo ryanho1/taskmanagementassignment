@@ -1,0 +1,193 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #0984e3;
+}
+
+.signup-container {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-sizing: border-box;
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.signup-container h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #0984e3;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.signup-container input[type="text"],
+.signup-container input[type="password"] {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.signup-container input[type="text"]:focus,
+.signup-container input[type="password"]:focus {
+    border-color: #0984e3;
+    outline: none;
+    box-shadow: 0 0 6px rgba(9, 132, 227, 0.4);
+}
+
+.signup-container input[type="submit"] {
+    background-color: #0984e3;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.signup-container input[type="submit"]:hover {
+    background-color: #074abd;
+    transform: scale(1.03);
+}
+
+.signup-container .btn-secondary {
+    background-color: transparent;
+    color: #0984e3;
+    border: 2px solid #0984e3;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.signup-container .btn-secondary:hover {
+    background-color: #0984e3;
+    color: white;
+    border: 2px solid transparent;
+}
+
+.signup-container .error,
+.signup-container .success {
+    font-size: 14px; 
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.signup-container .error {
+    background-color: #fdecea;
+    color: #e74c3c;
+}
+
+.signup-container .success {
+    background-color: #e8f8f3;
+    color: #2ecc71;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .signup-container {
+        padding: 30px 20px;
+    }
+
+    .signup-container h1 {
+        font-size: 22px;
+    }
+
+    .signup-container input[type="text"],
+    .signup-container input[type="password"] {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .signup-container input[type="submit"],
+    .signup-container .btn-secondary {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+.login-container {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-sizing: border-box;
+    animation: fadeIn 0.8s ease;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between; 
+    gap: 10px; 
+    margin-top: 20px; 
+}
+
+.button-group .btn-primary,
+.button-group .btn-secondary {
+    width: 48%; 
+    text-align: center;
+    padding: 12px; 
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none; 
+}
+
+.button-group .btn-primary {
+    background-color: #0984e3;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button-group .btn-primary:hover {
+    background-color: #074abd;
+    transform: scale(1.03);
+}
+
+.button-group .btn-secondary {
+    background-color: transparent;
+    color: #0984e3;
+    border: 2px solid #0984e3;
+    transition: all 0.3s ease;
+}
+
+.button-group .btn-secondary:hover {
+    background-color: #0984e3;
+    color: white;
+    border: 2px solid transparent;
+}
